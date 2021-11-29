@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         body: ResepCard(
-            title: 'Resep Masakan',
+            title: 'Ikan Bakar',
             rating: '4.9',
             coockTime: '30 min',
             thumbnailUrl: 'https://lh3.googleusercontent.com/pzjEu68JYRa8wPgUa2mwb_S1Js8USaa2f5PcMcLGOGo9OhJdVz65tQauj9De4AgcRuqzCpZ5wZ0QaRJOOsjn=s360'));
