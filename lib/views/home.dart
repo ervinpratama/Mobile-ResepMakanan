@@ -11,9 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
  late List<Resep> _resep; 
-bool isLoading = true;
+ bool _isLoading = true;
 
 @override
 void initstate() {
@@ -28,29 +27,31 @@ Future<void> getResep() async {
   });
 }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.restaurant_menu),
-              SizedBox(width: 10),
-              Text('Resep Masakan')
-            ],
-          ),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.restaurant_menu),
+            SizedBox(width: 10),
+            Text('Resep Masakan')
+          ],
         ),
-        body: _isLoading ? Center(child: CircularProgressIndicator()) :
-        ListView.builder(itemCount: _resep.length,
-        itemBuilder: (context, index){
-          return ResepCard(
-            title: _resep[index].name,
-            coockTime: _resep[index].totalTime,
-            rating: _resep[index].rating.toString(),
-            thumbnailUrl: _resep[index].images,
-            )
-        },)
+      ),
+      body: _isLoading 
+      ? Center(child: CircularProgressIndicator())
+      : ListView.builder(
+          itemCount: _resep.length,
+          itemBuilder: (context, index){
+            return ResepCard(
+              title: _resep[index].name,
+              coockTime: _resep[index].totalTime,
+              rating: _resep[index].rating.toString(),
+              thumbnailUrl: _resep[index].images,
+          );
+        },
+    ));
   }
 }
