@@ -5,38 +5,22 @@ import 'package:http/http.dart' as http;
 import 'package:resep/model/resep.dart';
 
 class ResepApi {
-//   var unirest = require("unirest");
-
-// var req = unirest("GET", "https://yummly2.p.rapidapi.com/feeds/list");
-
-// req.query({
-  // "limit": "18",
-  // "start": "0",
-  // "tag": "list.recipe.popular"
-// });
-
-// req.headers({
-  // "x-rapidapi-host": "yummly2.p.rapidapi.com",
-  // "x-rapidapi-key": "98b2e52d2amshbf42ea3127699f3p16bebejsn2a1e12a0fcfd",
-  // "useQueryString": true
-// });
-
   static Future<List<Resep>> getResep() async {
-    var uri = Uri.https('yummly2.p.rapidapi.com', '/feeds/list',
-        {"limit": "18", "start": "0", "tag": "list.recipe.popular"});
+    var uri = Uri.https('/tasty.p.rapidapi.com', '/recipes/list',
+        {"from": "0", "size": "20", "tags": "under_30_minutes"});
 
     final response = await http.get(uri, headers: {
-      "x-rapidapi-host": "yummly2.p.rapidapi.com",
-      "x-rapidapi-key": "98b2e52d2amshbf42ea3127699f3p16bebejsn2a1e12a0fcfd",
-      "useQueryString": "true"
+      "x-rapidapi-host": "tasty.p.rapidapi.com",
+	    "x-rapidapi-key": "7ff6557493mshaedd4398ed2997dp1b73d5jsn91db151c91f9",
+	    "useQueryString": "true"
     });
 
     Map data = jsonDecode(response.body);
 
     List _temp = [];
 
-    for (var i in data['feed']) {
-      _temp.add(i['content']['details']);
+    for (var i in data['results']) {
+      _temp.add(i);
     }
 
     return Resep.resepFromSnapshot(_temp);

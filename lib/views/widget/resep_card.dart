@@ -58,18 +58,21 @@ class ResepCard extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(15)),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 18,
-                      ),
-                      SizedBox(
-                        width: 7,
-                      ),
-                      Text(rating)
-                    ],
+                  child: InkWell(
+                    onTap: () => {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.play_circle_fill_rounded,
+                          color: Colors.yellow,
+                          size: 18,
+                        ),
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Text('Play Video')
+                      ],
+                    ),
                   ),
                 ),
                 Container(
