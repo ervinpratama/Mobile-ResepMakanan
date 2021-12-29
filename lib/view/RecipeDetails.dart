@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:resep/model/RecipeMode.dart';
+import 'package:resep/model/RecipeModel.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
@@ -97,7 +97,7 @@ class RecipeDetails extends StatelessWidget {
                     width: 10,
                   ),
                   Text(
-                    recipeModel.penyajian.toString() + ' Servings',
+                    recipeModel.penyajian.toString() + 'Penyajian',
                   ),
                 ],
               ),
@@ -118,13 +118,13 @@ class RecipeDetails extends StatelessWidget {
                         indicatorColor: Colors.red,
                         tabs: [
                           Tab(
-                            text: "Ingredients".toUpperCase(),
+                            text: "Komposisi".toUpperCase(),
                           ),
                           Tab(
-                            text: "Preparation".toUpperCase(),
+                            text: "Persiapan".toUpperCase(),
                           ),
                           Tab(
-                            text: "Reviews".toUpperCase(),
+                            text: "Penilaian".toUpperCase(),
                           ),
                         ],
                         labelColor: Colors.black,
@@ -149,12 +149,12 @@ class RecipeDetails extends StatelessWidget {
                       Expanded(
                         child: TabBarView(
                           children: [
-                            Ingredients(recipeModel: recipeModel),
+                            Komposisi(recipeModel: recipeModel),
                             Container(
-                              child: Text("Preparation Tab"),
+                              child: Text("Persiapan"),
                             ),
                             Container(
-                              child: Text("Reviews Tab"),
+                              child: Text("Penilaian"),
                             ),
                           ],
                         ),
@@ -215,8 +215,8 @@ class RecipeDetails extends StatelessWidget {
   }
 }
 
-class Ingredients extends StatelessWidget {
-  const Ingredients({
+class Komposisi extends StatelessWidget {
+  const Komposisi({
     Key key,
     @required this.recipeModel,
   }) : super(key: key);
@@ -239,7 +239,7 @@ class Ingredients extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                     vertical: 2.0,
                   ),
-                  child: Text('⚫️ ' + recipeModel.komposisi[index]),
+                  child: Text(recipeModel.komposisi),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {

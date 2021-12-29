@@ -1,8 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:resep/NewRecipe.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
-
+import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -10,6 +12,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String url = "http://127.0.0.1:8000/api/resep";
+
+  Future getResep() async {
+    var response = await http.get(Uri.parse(url));
+    print(json.decode(response.body));
+    return json.decode(response.body);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

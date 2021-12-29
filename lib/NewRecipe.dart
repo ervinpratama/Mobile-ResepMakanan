@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:resep/view/RecipeDetails.dart';
-import 'package:resep/model/RecipeMode.dart';
+import 'package:resep/model/RecipeModel.dart';
 
 
 class NewRecipe extends StatelessWidget {
