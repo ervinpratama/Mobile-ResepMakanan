@@ -1,5 +1,9 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:resep/model/GambarModel.dart';
+
+List RecipeModelFromJson(String str) => List.from(json.decode(str).map((x) => RecipeModel.fromJson(x)));
+String RecipeModelToJson(List data) => json.encode(List.from(data.map((x) => x.toJson())));
 
 class RecipeModel {
   int id;
