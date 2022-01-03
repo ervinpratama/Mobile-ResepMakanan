@@ -14,6 +14,9 @@ class RecipeModel {
   String imgPath;
   List<GambarModel> gambars;
 
+  static var demoRecipe;
+
+
   RecipeModel({
     this.id,
     this.judul,

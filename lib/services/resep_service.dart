@@ -5,7 +5,7 @@ import 'package:resep/model/RecipeModel.dart';
 class ResepService {
 
   //Hosted BASE URL
-  String baseUrl = 'http://127.0.0.1:8000/api/resep';
+  String baseUrl = 'http://127.0.0.1:8000/api';
 
   Future<List<RecipeModel>> getProducts() async {
     var url = '$baseUrl/resep';
