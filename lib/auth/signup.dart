@@ -52,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Sign Up',
               style: primaryTextStyle.copyWith(
-                fontSize: 24,
+                fontSize: 23,
                 fontWeight: semiBold,
               ),
             ),
@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Full Name',
               style: primaryTextStyle.copyWith(
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: medium,
               ),
             ),
@@ -132,7 +132,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Text(
               'Username',
               style: primaryTextStyle.copyWith(
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: medium,
               ),
             ),

@@ -13,6 +13,20 @@ class _SignInPageState extends State<SignInPage> {
 
   TextEditingController passwordController = TextEditingController(text: '');
 
+  get alertColor => null;
+
+  get primaryTextStyle => null;
+
+  get semiBold => null;
+
+  get subtitleTextStyle => null;
+
+  get medium => null;
+
+  get bgColor2 => null;
+
+  get primaryColor => null;
+
   @override
   Widget build(BuildContext context) {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
@@ -214,7 +228,7 @@ class _SignInPageState extends State<SignInPage> {
               },
               child: Text(
                 'Sign Up',
-                style: purpleTextStyle.copyWith(
+                style: purpleTextstyle.copyWith(
                   fontSize: 12,
                   fontWeight: medium,
                 ),
